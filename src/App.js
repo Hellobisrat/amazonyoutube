@@ -1,6 +1,7 @@
 
 import './App.css';
 import Header from './components/header/Header';
+import Banner from './components/home/Banner';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <div className='font-bodyFont  '>
          
           <Header/>
+          <Banner/>
         </div>
    
   );
