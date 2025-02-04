@@ -21,4 +21,10 @@
   .footerBottomText {
     @apply w-24 tracking-tight text-[12px] text-[#999] group-hover:underline ;
   }
+  .productLi {
+    @apply text-gray-600 hover:text-black text-sm font-medium;
+    @apply border-b-[1px] border-b-gray-400 hover:border-b-gray-700;
+    @apply flex items-center justify-end gap-2;
+    @apply hover:cursor-pointer duration-300 w-full;
+  }
 }
