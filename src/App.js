@@ -13,6 +13,7 @@ import Header from './components/header/Header';
 import Banner from './components/home/Banner';
 import Home from './pages/Home';
 import { productsData } from './api/api';
+import Signin from './pages/Signin';
 
 const Layout = ()=>{
   return (
@@ -29,6 +30,7 @@ function App() {
     
     <Route path='/' element={<Layout/>}>
     <Route index  element={<Home/>} loader={productsData}/>
+    <Route path='/signin' element={<Signin/>   }></Route>
     </Route>
    )
     

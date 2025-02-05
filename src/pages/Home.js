@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
       <Banner/>
-      <div className='w-full -mt-36 py-10'>
+      <div className='w-full -mt-14 xl:-mt-36 py-10'>
         <Products/>
       </div>
       
