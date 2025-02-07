@@ -6,6 +6,7 @@ import {
   Outlet,
   Route,
   RouterProvider,
+  ScrollRestoration
 } from 'react-router-dom';
 
 import Footer from './components/Footer/Footer';
@@ -14,11 +15,13 @@ import Banner from './components/home/Banner';
 import Home from './pages/Home';
 import { productsData } from './api/api';
 import Signin from './pages/Signin';
+import Cart from './pages/Cart';
 
 const Layout = ()=>{
   return (
     <div>
       <Header/>
+      <ScrollRestoration/>
       <Outlet/>
       <Footer/>
     </div>
@@ -31,6 +34,7 @@ function App() {
     <Route path='/' element={<Layout/>}>
     <Route index  element={<Home/>} loader={productsData}/>
     <Route path='/signin' element={<Signin/>   }></Route>
+    <Route path='/cart' element={<Cart/>}/>
     </Route>
    )
     

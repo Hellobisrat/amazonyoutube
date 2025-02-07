@@ -5,8 +5,11 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ApiIcon from '@mui/icons-material/Api';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/amazonSlice';
 
 function Products() {
+  const dispatch = useDispatch()
   const data = useLoaderData();
   const productData = data.data;
 
@@ -27,8 +30,8 @@ function Products() {
             <img className='w-52 h-64 object-contain'
              src={item.imageURL}
               alt="ProductImg" />
-            <ul className='w-full h-36 bg-gray-100 absolute 
-                  bottom-[-170px] flex flex-col items-end justify-center gap-2
+            <ul className='w-full h-36 bg-gray-100 absolute hidden
+                  bottom-[-170px]  flex-col items-end justify-center gap-2
                          font-titleFont px-2 border-1 border-r 
                           group-hover:bottom-0 duration-200 z-20'>
 
@@ -63,7 +66,15 @@ function Products() {
               <GradeIcon />
             </div>
           </div>
-          <button className='w-full font-titleFont font-medium text-base bg-gradient-to-tr
+          <button onClick={()=> dispatch(addToCart({
+            id:item.id,
+            title:item.title,
+            description:item.description,
+            price:item.price,
+            category:item.category,
+            image:item.imageURL,
+            quantity:1
+          }))} className='w-full font-titleFont font-medium text-base bg-gradient-to-tr
            from-yellow-400 to-yellow-200
             border hover:from-yellow-300 border-yellow-500
            hover:border-r-yellow-700 active:bg-gradient-to-bl
